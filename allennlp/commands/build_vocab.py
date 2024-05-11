@@ -66,7 +66,7 @@ def build_vocab_from_args(args: argparse.Namespace):
     if len(output_directory) > 0:
         os.makedirs(output_directory, exist_ok=True)
 
-    params = Params.from_file(args.param_path)
+    params = Params.from_file(args.param_path, args.overrides)
 
     with tempfile.TemporaryDirectory() as temp_dir:
         # Serializes the vocab to 'tempdir/vocabulary'.
